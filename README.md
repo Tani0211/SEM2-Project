@@ -1,7 +1,7 @@
 # Group
-Tanishq (202451159)
-Suhani Kabra (202451157)
-Ishita Garg (202452322)
+- Tanishq (202451159)
+- Suhani Kabra (202451157)
+- Ishita Garg (202452322)
 
 # SudoQ - Sudoku Solver Website
 
