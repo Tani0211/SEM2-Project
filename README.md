@@ -2,14 +2,14 @@
 
 SudoQ is a web application that solves Sudoku puzzles using a backtracking algorithm. It provides a user-friendly interface where users can input Sudoku puzzles manually or by uploading an image.
 
-## Features
+# Features
 
 - Solve Sudoku puzzles using a backtracking algorithm
 - Get hints for the next move
 - Upload an image of a Sudoku puzzle for automatic extraction (using Tesseract OCR with advanced image processing)
 - Clean and responsive user interface
 
-## Requirements
+# Requirements
 
 - Python 3.7 or higher
 - Flask
@@ -19,31 +19,24 @@ SudoQ is a web application that solves Sudoku puzzles using a backtracking algor
 - Tesseract OCR
 - PyTesseract
 
-## Installation
+# Installation
 
 1. Clone this repository or create a directory with all the files
 
 2. Install Tesseract OCR:
-   - **Windows**: 
+   - Windows: 
      - Download the installer from [https://github.com/UB-Mannheim/tesseract/wiki](https://github.com/UB-Mannheim/tesseract/wiki)
      - Install and add the Tesseract installation directory to your PATH environment variable
-   - **Mac**: `brew install tesseract`
-   - **Linux**: `sudo apt install tesseract-ocr`
+   - Mac: `brew install tesseract`
+
 
 3. Install Python dependencies:
    ```bash
    pip install -r requirements.txt
    ```
 
-4. (Optional) If you want to use Gemini API as a fallback for image extraction:
-   - Uncomment the google-generativeai line in requirements.txt and run `pip install -r requirements.txt` again
-   - Get an API key from Google AI Studio (https://ai.google.dev/)
-   - Set it as an environment variable:
-     - Windows Command Prompt: `set GEMINI_API_KEY=your_api_key_here`
-     - Windows PowerShell: `$env:GEMINI_API_KEY="your_api_key_here"`
-     - Linux/Mac: `export GEMINI_API_KEY=your_api_key_here`
 
-## Running the Application
+# Running the Application
 
 1. Start the Flask server:
 
@@ -57,46 +50,46 @@ python app.py
 http://127.0.0.1:5000
 ```
 
-## How to Use
+# How to Use
 
-1. **Manual Input**: Enter numbers directly into the Sudoku grid cells
-2. **Image Upload**: 
+1. Manual Input: Enter numbers directly into the Sudoku grid cells
+2. Image Upload: 
    - Click the "Upload Sudoku Image" button to upload an image of a Sudoku puzzle
    - The application will use Tesseract OCR with advanced image processing to extract the puzzle
    - For best results, upload a clear image with good lighting and minimal distortion
-3. **Solving**:
+3. Solving:
    - Click "Solve" to solve the entire puzzle
    - Click "Hint" to get a suggestion for the next move
    - Click "Erase" to clear the board
 
-## Image Processing Details
+# Image Processing Details
 
 The Sudoku image extraction uses multiple techniques to ensure accuracy:
 
-1. **Preprocessing**: 
+1. Preprocessing: 
    - Grayscale conversion
    - Gaussian blur to reduce noise
    - Adaptive thresholding
    - Contour detection to find and isolate the Sudoku grid
 
-2. **Grid Processing**:
+2. Grid Processing:
    - Automatic detection and correction of grid perspective
    - Extraction of individual cells
    - Cell image enhancement for better OCR
 
-3. **OCR with Tesseract**:
+3. OCR with Tesseract:
    - Optimized settings for digit recognition
    - Filtering of non-digit characters
    - Validation of extracted grid
 
-## Technical Details
+# Technical Details
 
-- **Frontend**: HTML, CSS, JavaScript
-- **Backend**: Python with Flask
-- **Image Processing**: OpenCV + Tesseract OCR 
-- **Algorithm**: Backtracking algorithm for solving Sudoku puzzles
+- Frontend: HTML, CSS, JavaScript
+- Backend: Python with Flask
+- Image Processing: OpenCV + Tesseract OCR 
+- Algorithm: Backtracking algorithm for solving Sudoku puzzles
 
-## Project Structure
+# Project Structure
 
 - `app.py`: The Flask backend server
 - `index.html`: Main HTML file
