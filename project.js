@@ -141,9 +141,10 @@ document.addEventListener("DOMContentLoaded", function() {
     
     // Find buttons by their text content
     buttons.forEach(button => {
-        if (button.textContent === "Solve") solveButton = button;
-        if (button.textContent === "Hint") hintButton = button;
-        if (button.textContent === "Erase") eraseButton = button;
+        if (button.textContent.trim() === "Solve") solveButton = button;
+        if (button.textContent.trim() === "Hint") hintButton = button;
+        if (button.textContent.trim() === "Erase") eraseButton = button;
+
     });
 
     // Add image upload functionality

@@ -18,6 +18,7 @@
     align-items: center;
     gap:1rem;
     margin-left:0%;
+  
 }
 .border:hover{
     border: 2px solid black;
@@ -26,27 +27,34 @@
     display:flex;
     justify-content: center;
 }
+#iconn{
+    display: flex;
+    align-items: center;
+}
 .panel{
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     background-color: black;
     gap:2rem;
     height:50px;
 
 }
-
+#hide{
+    width:8rem;
+}
 .option{
-    padding:10px;
+    padding:10px 20px;
     font-size:16px;
     background-color:whitesmoke;
     font-family: Arial;
+    border-radius: 8px;
 }
 .option:hover{
     background-color: burlywood;
     opacity:50%;
     border-color: silver;
-
+    cursor:pointer;
 }
 
 .display{
@@ -103,11 +111,11 @@
 
 /* Level 2: Medium borders (2px solid red) for 3x3 grid */
 .border-bottom-medium {
-    border-bottom: 2px solid red;
+    border-bottom: 2px solid rgb(43, 0, 255);
 }
 
 .border-right-medium {
-    border-right: 2px solid red;
+    border-right: 2px solid rgb(43, 0, 255);
 }
 
 /* New styles for image upload and hint */

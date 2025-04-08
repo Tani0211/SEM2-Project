@@ -339,18 +339,17 @@ def solve():
         if not board:
             return jsonify({'error': 'No board data provided'}), 400
         
-        # Convert string values to integers
+        # Convert string values to integers or handle empty cells
         for i in range(9):
             for j in range(9):
-                if board[i][j] == '':
+                if board[i][j] == '' or board[i][j] is None:
                     board[i][j] = 0
                 else:
                     board[i][j] = int(board[i][j])
         
-        # Create a copy of the board
+        # Create a copy of the board for solving
         solution = [row[:] for row in board]
         
-        # Solve the puzzle
         if solve_sudoku(solution):
             return jsonify({'solution': solution})
         else:
@@ -358,6 +357,7 @@ def solve():
     except Exception as e:
         logger.error(f"Error in solve endpoint: {str(e)}")
         return jsonify({'error': str(e)}), 500
+
 
 @app.route('/api/hint', methods=['POST'])
 def hint():
@@ -368,10 +368,10 @@ def hint():
         if not board:
             return jsonify({'error': 'No board data provided'}), 400
         
-        # Convert string values to integers
+        # Convert string values to integers or handle empty cells
         for i in range(9):
             for j in range(9):
-                if board[i][j] == '':
+                if board[i][j] == '' or board[i][j] is None:
                     board[i][j] = 0
                 else:
                     board[i][j] = int(board[i][j])
@@ -386,6 +386,7 @@ def hint():
     except Exception as e:
         logger.error(f"Error in hint endpoint: {str(e)}")
         return jsonify({'error': str(e)}), 500
+
 
 @app.route('/api/extract-from-image', methods=['POST'])
 def extract_from_image():
